@@ -1,8 +1,8 @@
+import { KeyboardEvent, useEffect, useState } from "react";
 import cn from "classnames";
 
 import { RatingProps } from "./Rating.props";
 import styles from "./Rating.module.css";
-import { KeyboardEvent, useEffect, useState } from "react";
 import StarIcon from "./star.svg";
 
 export const Rating = ({
