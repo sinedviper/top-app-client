@@ -1,3 +1,4 @@
+import { FieldError } from "react-hook-form";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
 export interface RatingProps
@@ -5,4 +6,5 @@ export interface RatingProps
   isEditable?: boolean;
   rating: number;
   setRating?: (rating: number) => void;
+  error?: FieldError;
 }
