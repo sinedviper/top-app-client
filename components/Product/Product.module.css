@@ -147,7 +147,12 @@
   margin-bottom: 5px;
 }
 
-.closed {
+.reviews {
+  overflow: hidden;
+  padding: 30px;
+}
+
+/* .closed {
   display: none;
   overflow: hidden;
   max-width: 0;
@@ -157,7 +162,7 @@
 .opened {
   max-width: auto;
   padding: 30px;
-}
+} */
 
 .reviews {
   margin-top: 10px;

@@ -42,16 +42,17 @@
 }
 
 .secondLevelBlock {
-  display: none;
+  overflow: hidden;
+  /* display: none; */
 }
 
-.secondLevelBlockOpened {
+/* .secondLevelBlockOpened {
   display: block;
 }
 
 .secondLevelBlockOpened:last-child {
   margin-bottom: 20px;
-}
+} */
 
 .thirdLevel {
   margin-left: 10px;
