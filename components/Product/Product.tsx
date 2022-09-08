@@ -41,10 +41,11 @@ export const Product = motion(
           behavior: "smooth",
           block: "start",
         });
+        reviewRef.current?.focus();
       };
 
       return (
-        <div className={className} {...props} ref={ref}>
+        <div className={className} {...props} ref={ref} tabIndex={0}>
           <Card className={styles.product}>
             <div className={styles.logo}>
               <Image
@@ -56,18 +57,32 @@ export const Product = motion(
             </div>
             <div className={styles.title}>{product.title}</div>
             <div className={styles.price}>
-              {priceEu(Math.round(product.price / 95))}
+              <span>
+                <span className='visualHidden'>price</span>
+                {priceEu(Math.round(product.price / 95))}
+              </span>
               {product.oldPrice && (
                 <Tag color='green' className={styles.oldPrice}>
-                  {priceEu(Math.round((product.price - product.oldPrice) / 95))}
+                  <span>
+                    <span className='visualHidden'>sale</span>
+                    {priceEu(
+                      Math.round((product.price - product.oldPrice) / 95)
+                    )}
+                  </span>
                 </Tag>
               )}
             </div>
             <div className={styles.credit}>
-              {priceEu(Math.round(product.credit / 95))}/
+              <span>
+                <span className='visualHidden'>credit</span>
+                {priceEu(Math.round(product.credit / 95))}/
+              </span>
               <span className={styles.month}>month</span>
             </div>
             <div className={styles.rating}>
+              <span className='visualHidden'>
+                {"rating" + (product.reviewAvg ?? product.initialRating)}
+              </span>
               <Rating rating={product.reviewAvg ?? product.initialRating} />
             </div>
             <div className={styles.tags}>
@@ -77,8 +92,12 @@ export const Product = motion(
                 </Tag>
               ))}
             </div>
-            <div className={styles.priceTitle}>price</div>
-            <div className={styles.creditTitle}>credit</div>
+            <div className={styles.priceTitle} aria-hidden={true}>
+              price
+            </div>
+            <div className={styles.creditTitle} aria-hidden={true}>
+              credit
+            </div>
             <div className={styles.rateTitle}>
               <a href='#ref' onClick={scrollToReview}>
                 {product.reviewCount}{" "}
@@ -134,12 +153,9 @@ export const Product = motion(
           >
             <Card
               color='blue'
-              className={cn(
-                styles.reviews
-                // {[styles.opened]: isReviewOpened,
-                // [styles.closed]: !isReviewOpened,}
-              )}
+              className={cn(styles.reviews)}
               ref={reviewRef}
+              tabIndex={isReviewOpened ? 0 : -1}
             >
               {product.reviews.map((r) => (
                 <div key={r._id}>
@@ -147,7 +163,7 @@ export const Product = motion(
                   <Divider />
                 </div>
               ))}
-              <ReviewForm productId={product._id} />
+              <ReviewForm productId={product._id} isOpened={isReviewOpened} />
             </Card>
           </motion.div>
         </div>

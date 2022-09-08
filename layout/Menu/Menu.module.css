@@ -1,3 +1,8 @@
+.firstLevelList {
+  list-style: none;
+  padding: 0;
+}
+
 .firstLevel {
   display: grid;
   align-items: center;
@@ -30,29 +35,25 @@
 
   font-weight: 300;
   font-size: 12px;
-  line-height: 16px;
+
+  background: none;
+  border: none;
 }
 
 .secondBlock {
   margin-top: 15px;
   margin-left: 12px;
-  padding-left: 32px;
+  padding: 0 0 0 32px;
+  list-style: none;
 
   border-left: 1px solid #dfdfdf;
 }
 
 .secondLevelBlock {
   overflow: hidden;
-  /* display: none; */
+  list-style: none;
+  padding: 0;
 }
-
-/* .secondLevelBlockOpened {
-  display: block;
-}
-
-.secondLevelBlockOpened:last-child {
-  margin-bottom: 20px;
-} */
 
 .thirdLevel {
   margin-left: 10px;
@@ -64,7 +65,8 @@
   color: var(--gray-dark);
   font-weight: 500;
   font-size: 14px;
-  line-height: 19px;
+
+  outline-offset: -1px;
 }
 
 .thirdLevelActive,

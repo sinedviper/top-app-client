@@ -119,7 +119,7 @@
 }
 
 .advantages {
-  border-left: 2px solid var(--green);
+  border-left: 2px solid #1dc37e;
   padding-left: 15px;
   margin-bottom: 20px;
 }
@@ -151,18 +151,6 @@
   overflow: hidden;
   padding: 30px;
 }
-
-/* .closed {
-  display: none;
-  overflow: hidden;
-  max-width: 0;
-  padding: 0;
-}
-
-.opened {
-  max-width: auto;
-  padding: 30px;
-} */
 
 .reviews {
   margin-top: 10px;

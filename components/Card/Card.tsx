@@ -12,7 +12,7 @@ export const Card = forwardRef(
   ): JSX.Element => {
     return (
       <div
-        className={cn(styles.card, className, {
+        className={cn(className, styles.card, {
           [styles.blue]: color == "blue",
         })}
         ref={ref}
