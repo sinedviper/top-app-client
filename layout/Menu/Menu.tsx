@@ -136,7 +136,7 @@ export const Menu = (): JSX.Element => {
                 `/${route}/${p.alias}` == router.asPath,
             })}
             // eslint-disable-next-line jsx-a11y/aria-props
-            aria-currnet={
+            aria-current={
               `/${route}/${p.alias}` == router.asPath ? "page" : false
             }
           >

@@ -7,9 +7,10 @@ import { MenuItem } from "../../interfaces/menu.interface";
 import { firstLevelMenu } from "../../helpers/helpers";
 import { ParsedUrlQuery } from "querystring";
 import { API } from "../../helpers/api";
+import { Htag } from "../../components";
 
 function Type({ firstCategory }: TypeProps): JSX.Element {
-  return <div>type: {firstCategory}</div>;
+  return <Htag tag='h1'>Category number {firstCategory}</Htag>;
 }
 
 export default withLayout(Type);
@@ -17,7 +18,7 @@ export default withLayout(Type);
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: firstLevelMenu.map((m) => "/" + m.route),
-    fallback: true,
+    fallback: false, //true
   };
 };
 

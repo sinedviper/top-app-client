@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import axios from "axios";
 import { ParsedUrlQuery } from "querystring";
+import Head from "next/head";
 
 import { withLayout } from "../../layout/Layout";
 import { MenuItem } from "../../interfaces/menu.interface";
@@ -12,14 +13,31 @@ import { ProductModel } from "../../interfaces/product.interface";
 import { firstLevelMenu } from "../../helpers/helpers";
 import { TopPageComponent } from "../../page-components";
 import { API } from "../../helpers/api";
+import { Error404 } from "../404";
 
 function TopPage({ firstCategory, page, products }: TopPageProps): JSX.Element {
+  if (!page || !products) {
+    return <Error404 />;
+  }
+
   return (
-    <TopPageComponent
-      products={products}
-      firstCategory={firstCategory}
-      page={page}
-    />
+    <>
+      {page && products && (
+        <>
+          <Head>
+            <title>{page.metaTitle}</title>
+            <meta name='description' content={page.metaDescription} />
+            <meta property='og:title' content={page.metaTitle} />
+            <meta property='og:type' content='article' />
+          </Head>
+          <TopPageComponent
+            products={products}
+            firstCategory={firstCategory}
+            page={page}
+          />
+        </>
+      )}
+    </>
   );
 }
 
@@ -38,7 +56,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: true,
+    fallback: false, //true
   };
 };
 

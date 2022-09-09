@@ -7,6 +7,10 @@
   padding: 30px;
 }
 
+.cardProduct {
+  outline-style: none;
+}
+
 .logo {
   grid-row: 1 / span 2;
   margin-bottom: 20px;
@@ -46,6 +50,8 @@
 }
 
 .advBlock {
+  font-size: 16px;
+  line-height: 22px;
   grid-column: middle / end;
 }
 
@@ -101,11 +107,6 @@
 
 .reviewButton {
   margin-left: 20px;
-}
-
-.advBlock {
-  font-size: 16px;
-  line-height: 22px;
 }
 
 .advTitle {

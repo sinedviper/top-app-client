@@ -1,5 +1,3 @@
-import cn from "classnames";
-
 import { Card } from "../Card/Card";
 import RateIcon from "./rate.svg";
 import styles from "./HhData.module.css";

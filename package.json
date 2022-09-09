@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prepare": "husky install",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
     "stylelint": "stylelint \"**/*.css\" --fix"
   },
   "dependencies": {
@@ -15,7 +17,8 @@
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.34.2"
+    "react-hook-form": "^7.34.2",
+    "react-yandex-metrika": "^2.6.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.3.1",
@@ -26,6 +29,7 @@
     "@typescript-eslint/parser": "^5.35.1",
     "eslint": "^8.23.0",
     "eslint-config-next": "12.2.5",
+    "husky": "^8.0.1",
     "stylelint": "^14.11.0",
     "stylelint-config-standard": "^28.0.0",
     "stylelint-order": "^5.0.0",

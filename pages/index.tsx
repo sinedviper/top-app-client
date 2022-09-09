@@ -1,32 +1,17 @@
 import { GetStaticProps } from "next";
-import { useState } from "react";
-import { Button, Htag, P, Rating, Tag } from "../components";
-import { withLayout } from "../layout/Layout";
 import axios from "axios";
+
+import { Htag } from "../components";
+import { withLayout } from "../layout/Layout";
 import { MenuItem } from "../interfaces/menu.interface";
 import { API } from "../helpers/api";
 
-function Home({ menu }: HomeProps): JSX.Element {
-  const [rating, setRating] = useState<number>(4);
+function Home({}: HomeProps): JSX.Element {
   return (
     <div>
-      <Htag tag='h1'>hellow</Htag>
-      <Button appearance='primary' arrow='down'>
-        Button
-      </Button>
-      <Button appearance='ghost' arrow='right'>
-        Button
-      </Button>
-      <P size='s'>mini text</P>
-      <P>middle text</P>
-      <P size='l'>Big text</P>
-      <Tag size='s' color='red'>
-        Red
-      </Tag>
-      <Tag size='m' color='green'>
-        Red
-      </Tag>
-      <Rating rating={rating} isEditable setRating={setRating} />
+      <Htag tag='h1'>
+        Hello, my name is Denis and this is my test site how it work with api HH
+      </Htag>
     </div>
   );
 }
