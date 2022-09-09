@@ -1,85 +1,88 @@
 .reviewForm {
-  font-size: 14px;
-  line-height: 24px;
+	display: grid;
+	align-items: center;
 
-  display: grid;
-  grid-template-columns: [start] auto 1fr auto [end];
-  gap: 20px 30px;
-  align-items: center;
+	font-size: 14px;
+	line-height: 24px;
+	grid-template-columns: [start] auto 1fr auto [end];
+	gap: 20px 30px;
 }
 
 .description,
 .submit {
-  grid-column: start / end;
+	grid-column: start / end;
 }
 
 .title {
-  justify-self: left;
+	justify-self: left;
 }
 
 .info {
-  margin-left: 15px;
+	margin-left: 15px;
 }
 
 .rating {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 20px;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 20px;
 }
 
 .panel {
-  padding: 20px;
-  position: relative;
-  border-radius: 5px;
-  margin-top: 10px;
+	position: relative;
+
+	margin-top: 10px;
+	padding: 20px;
+
+	border-radius: 5px;
 }
 
 .error {
-  background: var(--red-light);
+	background: var(--red-light);
 }
 
 .success {
-  background: var(--green-light);
+	background: var(--green-light);
 }
 
 .successTitle {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .error .close path {
-  stroke: var(--red);
+	stroke: var(--red);
 }
 
 .close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+
+	border: none;
+	background: none;
 }
 
 @media screen and (max-width: 1100px) {
-  .reviewForm {
-    grid-template-columns: [start] 1fr 1fr [end];
-  }
+	.reviewForm {
+		grid-template-columns: [start] 1fr 1fr [end];
+	}
 
-  .title {
-    justify-self: initial;
-  }
+	.title {
+		justify-self: initial;
+	}
 
-  .rating {
-    grid-column: start / end;
-  }
+	.rating {
+		grid-column: start / end;
+	}
 }
 
 @media screen and (min-width: 765px) and (max-width: 900px) {
-  .reviewForm {
-    grid-template-columns: [start] 1fr [end];
-  }
+	.reviewForm {
+		grid-template-columns: [start] 1fr [end];
+	}
 }
 
 @media screen and (max-width: 640px) {
-  .reviewForm {
-    grid-template-columns: [start] 1fr [end];
-  }
+	.reviewForm {
+		grid-template-columns: [start] 1fr [end];
+	}
 }
